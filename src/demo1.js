@@ -9,14 +9,15 @@ var appState = observable({
 
 @observer
 class TimerView extends Component {
-  render() {
-      return (<button onClick={this.onReset.bind(this)}>
-          Seconds passed: {this.props.appState.timer}
-      </button>);
-  }
-  onReset () {
-      this.props.appState.resetTimer();
-  }
+    render() {
+        return (<button onClick={this.onReset.bind(this)}>
+                Seconds passed: {this.props.appState.timer}
+            </button>);
+    }
+
+    onReset () {
+        this.props.appState.resetTimer();
+    }
 };
 
 appState.resetTimer = action(function reset() {
